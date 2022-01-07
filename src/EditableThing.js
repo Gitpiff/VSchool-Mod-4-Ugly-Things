@@ -28,23 +28,26 @@ export default function EditableThing (props) {
                         <input
                             name="title"
                             value={context.uglyThing.title}
-                            // onChange={handleEditChange}
+                            onChange={context.handleEditChange}
                             placeholder="Enter a New Title"
                         />
                         <input
                             name="description"
                             value={context.uglyThing.description}
-                            // onChange={handleEditChange}
+                            onChange={context.handleEditChange}
                             placeholder="Enter a New Description"
                         />
                         <input
                             name="imgUrl"
                             value={context.uglyThing.imgUrl}
-                            // onChange={handleEditChange}
+                            onChange={context.handleEditChange}
                             placeholder="Enter a New Image Url"
                         />
                         <br />
-                        <button >Submit Changes</button>
+                        <button onClick={((e)=> {
+                            e.preventDefault()
+                            context.submitEditedThing(context.uglyThing.id)
+                        })}>Submit Changes</button>
                         <button onClick={context.cancelEdit}>Cancel Changes</button>
                     </form>
             </div>

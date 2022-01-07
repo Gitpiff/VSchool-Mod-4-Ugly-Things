@@ -12,19 +12,17 @@ function UglyThingsList() {
     //     setEditUglyThingId(UglyThing.id)
     // }
 
-    const list = context.uglyThingsList.map((item) =>
-
+    const list = context.uglyThingsList.map((item, index) =>
+        ((
+            console.log(item._id), 
             <UglyThing
-                key={item.index}
-                id={item._id}
-                title={item.title}
-                img={item.imgUrl}
-                description={item.description}
-            />
-
-
-
-
+            key={index}
+            id={item._id}
+            title={item.title}
+            img={item.imgUrl}
+            description={item.description}
+        />
+        ))
     )
 
     return (
