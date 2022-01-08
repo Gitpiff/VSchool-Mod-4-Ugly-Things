@@ -52,8 +52,8 @@ const Context = React.createContext()
     }
 
 
-    function submitEditedThing(id, updatedThing) {
-        axios.put(`https://api.vschool.io/victor-navarro/thing/${id}`, updatedThing)
+    function submitEditedThing(e, id) {
+        axios.put(`https://api.vschool.io/victor-navarro/thing/${id}`, uglyThing)
         .then((res) => {
             setUglyThingsList(prevUglyThingsList => {
                 return prevUglyThingsList.map(thing => thing._id === id ? res.data : thing)})
